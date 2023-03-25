@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Navigation = (props) => {
+const Navigation = (props) => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -18,7 +18,7 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
-            React Landing Page
+            STARTUPHIVE
           </a>{" "}
         </div>
 
@@ -68,3 +68,5 @@ export const Navigation = (props) => {
     </nav>
   );
 };
+
+export default Navigation;

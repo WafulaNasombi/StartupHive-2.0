@@ -1,6 +1,6 @@
 import React from "react";
 
-export const About = (props) => {
+const About = (props) => {
   return (
     <div id="about">
       <div className="container">
@@ -41,3 +41,5 @@ export const About = (props) => {
     </div>
   );
 };
+
+export default About

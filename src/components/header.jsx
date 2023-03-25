@@ -1,6 +1,7 @@
 import React from "react";
+import "react-router-dom";
 
-export const Header = (props) => {
+const Header = (props) => {
   return (
     <header id="header">
       <div className="intro">
@@ -14,10 +15,10 @@ export const Header = (props) => {
                 </h1>
                 <p>{props.data ? props.data.paragraph : "Loading"}</p>
                 <a
-                  href="#features"
+                  href="/register"
                   className="btn btn-custom btn-lg page-scroll"
                 >
-                  Learn More
+                  Sign Up
                 </a>{" "}
               </div>
             </div>
@@ -27,3 +28,5 @@ export const Header = (props) => {
     </header>
   );
 };
+
+export default Header;

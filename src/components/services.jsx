@@ -1,20 +1,19 @@
 import React from "react";
 
-export const Services = (props) => {
+const Services = (props) => {
   return (
     <div id="services" className="text-center">
       <div className="container">
         <div className="section-title">
           <h2>Our Services</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+          Explore our comprehensive services designed to help your business grow and thrive in today's digital landscape
           </p>
         </div>
         <div className="row">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4">
+                <div key={`${d.name}-${i}`} className="col-md-3">
                   {" "}
                   <i className={d.icon}></i>
                   <div className="service-desc">
@@ -29,3 +28,5 @@ export const Services = (props) => {
     </div>
   );
 };
+
+export default Services;

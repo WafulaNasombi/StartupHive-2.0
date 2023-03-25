@@ -7,7 +7,7 @@ const initialState = {
   email: "",
   message: "",
 };
-export const Contact = (props) => {
+const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
 
   const handleChange = (e) => {
@@ -126,8 +126,8 @@ export const Contact = (props) => {
               <div className="social">
                 <ul>
                   <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
+                    <a href={props.data ? props.data.github : "/"}>
+                      <i className="fa fa-github"></i>
                     </a>
                   </li>
                   <li>
@@ -149,9 +149,9 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
+            &copy; 2023 StartupHive. Design by{" "}
             <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
+              Stephanie
             </a>
           </p>
         </div>
@@ -159,3 +159,5 @@ export const Contact = (props) => {
     </div>
   );
 };
+
+export default Contact;
