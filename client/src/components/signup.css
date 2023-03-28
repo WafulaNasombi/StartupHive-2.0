@@ -1,13 +1,19 @@
-body {
-  background: #48c6ef;
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(72, 198, 239, 0.5),
-    rgba(111, 134, 214, 0.5)
-  );
-  background: linear-gradient(
-    to right,
-    rgba(72, 198, 239, 0.5),
-    rgba(111, 134, 214, 0.5)
-  );
+form {
+  width: 520px;
+  height: auto;
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+
+.errors {
+  color: red;
+}
+
+.form-button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
 }

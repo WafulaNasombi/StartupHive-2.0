@@ -7,7 +7,8 @@ import LandingPage from "./components/LandingPage";
 import Register from "./components/signup";
 import "./App.css";
 import Signup from "./components/signup";
-import Superchat from "./components/superchat"
+import Superchat from "./components/superchat";
+import Login from "./components/login";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -24,8 +25,9 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Superchat />} />
+          <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>
