@@ -1,113 +1,83 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const DeveloperProfile = () => {
-  const [profileData, setProfileData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    address: "",
-    bio: "",
-  });
-
-  const handleProfileDataChange = (e) => {
-    setProfileData({
-      ...profileData,
-      [e.target.name]: e.target.value,
+function DeveloperProfile() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [age, setAge] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [technologies, setTechnologies] = useState([]);
+  const [profilePicture, setProfilePicture] = useState('');
+  const [password, setPassword] = useState('');
+  
+  // Function to handle changes to the technologies field
+  const handleTechnologiesChange = (event) => {
+    const selectedTechnologies = Array.from(event.target.selectedOptions, option => option.value);
+    setTechnologies(selectedTechnologies);
+  };
+  
+  // Function to handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Submitting form:', {
+      firstName,
+      lastName,
+      age,
+      email,
+      phone,
+      technologies,
+      profilePicture,
+      password,
     });
+    // TODO: Save form data to server
   };
-
-  const handleProfilePictureChange = (e) => {
-    // Handle profile picture update logic here
-  };
-
-  const handleProfileFormSubmit = (e) => {
-    e.preventDefault();
-    // Handle profile update logic here
-  };
-
-  const [projectData, setProjectData] = useState({
-    title: "",
-    description: "",
-    techStack: "",
-    fundingGoal: 0,
-  });
-
-  const handleProjectDataChange = (e) => {
-    setProjectData({
-      ...projectData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleProjectFormSubmit = (e) => {
-    e.preventDefault();
-    // Handle project submission logic here
-  };
-
-  const [investorIdeas, setInvestorIdeas] = useState([]);
-
-  const handleReviewInvestorIdeas = (e) => {
-    e.preventDefault();
-    // Handle review investor ideas logic here
-  };
-
-  const [portfolioData, setPortfolioData] = useState({
-    title: "",
-    description: "",
-    techStack: "",
-    link: "",
-  });
-
-  const handlePortfolioDataChange = (e) => {
-    setPortfolioData({
-      ...portfolioData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handlePortfolioFormSubmit = (e) => {
-    e.preventDefault();
-    // Handle portfolio submission logic here
-  };
-
-  const [stakeData, setStakeData] = useState({
-    company: "",
-    stake: 0,
-    valuation: 0,
-  });
-
-  const handleStakeDataChange = (e) => {
-    setStakeData({
-      ...stakeData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleStakeFormSubmit = (e) => {
-    e.preventDefault();
-    // Handle stake offer submission logic here
-  };
-
+  
   return (
     <div>
-      <h1>Developer Profile</h1>
-      <h2>Edit Profile</h2>
-      <form onSubmit={handleProfileFormSubmit}>
-        <label htmlFor="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" value={profileData.firstName} onChange={handleProfileDataChange} />
-        <label htmlFor="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" value={profileData.lastName} onChange={handleProfileDataChange} />
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" value={profileData.email} onChange={handleProfileDataChange} />
-        <label htmlFor="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" value={profileData.phone} onChange={handleProfileDataChange} />
-        <label htmlFor="address">Address:</label>
-        <input type="text" id="address" name="address" value={profileData.address} onChange={handleProfileDataChange} />
-        <label htmlFor="bio">Bio:</label>
-        <textarea id="bio" name="bio" value={profileData.bio} onChange={handlePortfolioDataChange}/>
-        </form>
-        </div>
+      <h1>Create Developer Profile</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          First Name:
+          <input type="text" value={firstName} onChange={(event) => setFirstName(event.target.value)} />
+        </label>
+        <label>
+          Last Name:
+          <input type="text" value={lastName} onChange={(event) => setLastName(event.target.value)} />
+        </label>
+        <label>
+          Age:
+          <input type="number" value={age} onChange={(event) => setAge(event.target.value)} />
+        </label>
+        <label>
+          Email:
+          <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+        </label>
+        <label>
+          Phone:
+          <input type="tel" value={phone} onChange={(event) => setPhone(event.target.value)} />
+        </label>
+        <label>
+          Technologies:
+          <select multiple={true} value={technologies} onChange={handleTechnologiesChange}>
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+          </select>
+        </label>
+        <label>
+          Profile Picture:
+          <input type="file" onChange={(event) => setProfilePicture(event.target.files[0])} />
+        </label>
+        <label>
+          Password:
+          <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+        </label>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
   );
 }
 
