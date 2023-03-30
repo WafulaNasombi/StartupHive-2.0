@@ -14,10 +14,7 @@ const Header = (props) => {
                   <span></span>
                 </h1>
                 <p>{props.data ? props.data.paragraph : "Loading"}</p>
-                <a
-                  href="/signup"
-                  className="btn btn-custom btn-lg page-scroll"
-                >
+                <a href="/roles" className="btn btn-custom btn-lg page-scroll">
                   Sign Up
                 </a>{" "}
               </div>

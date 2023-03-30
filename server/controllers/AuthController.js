@@ -10,7 +10,6 @@ const register = (req, res, next) => {
       });
     } else {
       let user = new User({
-        username: req.body.username,
         email: req.body.email,
         password: hashedPass,
         role: req.body.role,
@@ -70,3 +69,4 @@ const login = (req, res, next) => {
 };
 
 module.exports = { register, login };
+

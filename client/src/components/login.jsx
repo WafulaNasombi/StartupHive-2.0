@@ -42,57 +42,61 @@ const Login = () => {
       });
   };
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="panel panel-primary">
-          <div className="panel-body">
-            <form onSubmit={formik.handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="email" className="form-label" for="email">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="form-control"
-                  placeholder="email@example.com"
-                  onChange={(e) => setEmail(e.target.value)}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.email}
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <small className="errors">{formik.errors.email}</small>
-                ) : null}
-              </div>
+    <div className="container">
+      <div className="">
+        <div className="">
+          <form onSubmit={formik.handleSubmit}>
+            <div className="form-group mb-3">
+              <label htmlFor="email" className="form-label" for="email">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="form-control"
+                placeholder="email@example.com"
+                onChange={(e) => setEmail(e.target.value)}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <small className="errors">{formik.errors.email}</small>
+              ) : null}
+            </div>
 
-              <div className="form-group mb-3">
-                <label for="password" htmlFor="password" className="form-label">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  className="form-control"
-                  placeholder="Enter password"
-                  type="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.password}
-                />
-                {formik.touched.password && formik.errors.password ? (
-                  <small className="errors">{formik.errors.password}</small>
-                ) : null}
-              </div>
-            </form>
-            <button type="submit" onClick={onLogin}>
-              Sign In
+            <div className="form-group mb-3">
+              <label
+                for="inputPassword5"
+                htmlFor="password"
+                className="form-label"
+              >
+                Password
+              </label>
+              <input
+                id="inputPassword5"
+                name="password"
+                className="form-control"
+                placeholder="Enter password"
+                aria-labelledby="passwordHelpBlock"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.password && formik.errors.password ? (
+                <small className="errors">{formik.errors.password}</small>
+              ) : null}
+            </div>
+            <br />
+
+            <button type="submit" className="mb-3" onClick={onLogin}>
+              Sign up
             </button>
-            <p>
+            <br />
+            <p className="text-center">
               No account yet?{""}
               <NavLink to="/signup">Sign Up</NavLink>
             </p>
-          </div>
+          </form>
         </div>
       </div>
     </div>

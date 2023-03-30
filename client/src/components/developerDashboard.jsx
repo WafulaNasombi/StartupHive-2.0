@@ -97,10 +97,10 @@ const DeveloperProfile = () => {
             onChange={handleStakeOfferChange}
           />
         </FormGroup>
-        <Button type="submit" color="primary">
-          Post Project
-        </Button>
       </Form>
+      <button type="submit" color="primary">
+          Post Project
+        </button>
     </div>
   );
 };
